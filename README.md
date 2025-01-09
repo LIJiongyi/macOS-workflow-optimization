@@ -9,7 +9,6 @@
 1 (常见)通用软件的下载安装
 2 (个人喜好)拓展macOS的功能
 3 系统和开发环境基本配置
-4 终端的配置
 
 
 
@@ -20,7 +19,7 @@
 a. 浏览器: Firefox, Chrome
 如果平时没有特别的喜好,可以直接使用macOS自带的Safari,比其他的浏览器更加省电
 
-个人喜爱更自由的浏览器,所以平时使用Firefox作为主力,当需要查看前端页面显示或者网页不兼容的时候选择Chrome查看.
+个人喜爱更自由的浏览器,曾经平时使用Firefox作为主力,但是由于macOS的fiefox对红绿灯按钮UI适配一般,现在使用Chrome.
 下载: 官网
 
 b. 播放器:IINA
@@ -105,3 +104,75 @@ Appcleaner
 
 CheatSheet
 安装以后后台工作,长按command可以显示在当前页面下可以使用的快捷键,对于学习快捷键使用很有效
+
+Logi Options+
+bug很多并且比较臃肿但是不得不用, 其他开源的驱动适配的还是不如原生
+
+Air Battery
+显示设备电量的软件,可以在菜单栏也可以小组件,比系统自带的更全面一点,比如蓝牙设备的实时电量.
+
+Aldente
+维护电池健康, 比如可以将电池维持在80容量不变, pro版本支持了更多的功能
+
+Bartender 5
+扩展macOS的菜单栏,解决刘海屏占位置的问题
+
+
+
+
+3 系统和开发环境基本配置
+
+终端配置
+
+安装neofetch,加入终端启动自动执行,有点仪式感...
+
+包管理器: macport
+曾经使用homebrew也就是macOS最热门的包管理器管理软件环境, 但是由于brew通常自动将包安装在系统opt目录下(也可能是我记错了qwq),
+导致自动拥有管理员权限. 容易产生包的冲突问题,导致在一次冲突无法解决后我重装系统将包管理器换成了Macport, 一个老一些更新慢一些
+但是为每个安装的包或者软件的环境隔离起来,虽然会重复下载依赖以及经常会编译下载的源码,但是至少环境再没有冲突了,macport也不会自动调用管理员权限.
+
+终端主题: powerlevel10k
+很有名的一个主题,从github上clone下来后按照官方给出的提示做就可以了.
+效果图
+![alt text](image-2.png)
+
+zsh插件: 语法高亮和根据历史补全
+同样也是clone github上的插件,在.zshrc中添加即可.
+下面是我写的配置,
+
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# 自己添加的语法高亮插件
+
+source ~/.zsh-autosuggestions/zsh-autosuggestions.zsh
+# 自己添加的建议插件
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=yellow"
+# 语法高亮的颜色
+
+ZSH_HIGHLIGHT_STYLES[unknown-command]='fg=red'
+# 语法未识别时的颜色
+
+
+ps 我没有直接装oh my zsh这个东西和第三方终端,因为暂时用不到...并且oh my zsh有很多功能会拖慢终端启动速度,我也只需要两个插件即可
+
+
+开发环境 
+
+❯ python --version
+Python 3.12.7
+
+❯ java --version
+java 17.0.12 2024-07-16 LTS
+Java(TM) SE Runtime Environment (build 17.0.12+8-LTS-286)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.12+8-LTS-286, mixed mode, sharing)
+
+等等等等
+
+本人还是个CTFer,主打web
+列举下安装的工具:
+
+file, dirsearch, binwalk, foremost软件包
+
+stegsolve图片隐写工具, wireshark, burpsuite
+
+剩下的用的具体看题目了,还有很多...
